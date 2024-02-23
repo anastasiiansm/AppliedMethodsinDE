@@ -1,0 +1,22 @@
+#1.) What are the 4 main sources of endogeneity.
+   1) Omitted Variable Bias; 2) Measurement errors in regressors; 3) Simultaneous equations; 4) Program or treatment evaluation with selection into treatment
+
+#2.) Provide a formal definition of Selection Bias, and show how it arises when (naively) comparing outcomes from two groups that are drawn from different populations.
+   Selection bias occurs when the sampling procedure is not random, and thus the sample is not representative of the population
+#3.) Derive the bias that results from omitting x2 in the model y = b1x1 + b2x2 + u?
+#4.) Simulate:
+#a. Do the simulations that are shown from page 20 onwards to illustrate OVB.
+#i. Can you replicate the bias?
+#b. Instead of simply copying everything, try to center x2 around 1.33*x1.
+#i. Can you predict/compute the bias you will get now?
+#ii. What bias do you get?
+#c. Instead of omitting x2, try omitting x1. Can you estimate x2 without bias?
+#i. If yes provide the coefficient estimate and compute the confidence interval.
+#ii. If no, compute the bias (analytically) and estimate the bias using R.
+#5.) Follow all the other steps in the slide deck.
+#a. Example 1 What type of endogeneity does this example highlight?
+#b. Example 2: What type of endogeneity does this example highlight?
+#6.) Which source of Endogeneity do you consider to be the largest problem for your work. Explain why?
+
+Task 2:
+Visit at least 2 (better 3) blogs of your colleagues and comment on their home-assignment work. Ideally ask them a question.
