@@ -2,17 +2,26 @@
    1) Omitted Variable Bias; 2) Measurement errors in regressors; 3) Simultaneous equations; 4) Program or treatment evaluation with selection into treatment
 
 #2.) Provide a formal definition of Selection Bias, and show how it arises when (naively) comparing outcomes from two groups that are drawn from different populations.
-   Selection bias occurs when the sampling procedure is not random, and thus the sample is not representative of the population
+   Selection bias occurs when the sampling procedure is not random, and thus the sample is not representative of the population. My example is making research leading the personal attachment of people to the luxury brand in two complete areas such as the rural and city centre of the capital. 
 #3.) Derive the bias that results from omitting x2 in the model y = b1x1 + b2x2 + u?
+   Firstly, estimating the model: yi = b1x1 +vi; where b = (E(xi1xi1))−1E(xi1xi2)
+
 #4.) Simulate:
 #a. Do the simulations that are shown from page 20 onwards to illustrate OVB.
 #i. Can you replicate the bias?
+
+
+
 #b. Instead of simply copying everything, try to center x2 around 1.33*x1.
 #i. Can you predict/compute the bias you will get now?
+x1 is 8.022; x2 is  5.747
 #ii. What bias do you get?
+Omitted variable bias since the influence of x2 is not accounted for in this model. 
+
 #c. Instead of omitting x2, try omitting x1. Can you estimate x2 without bias?
 #i. If yes provide the coefficient estimate and compute the confidence interval.
 #ii. If no, compute the bias (analytically) and estimate the bias using R.
+
 #5.) Follow all the other steps in the slide deck.
 #a. Example 1 What type of endogeneity does this example highlight?
 #b. Example 2: What type of endogeneity does this example highlight?
