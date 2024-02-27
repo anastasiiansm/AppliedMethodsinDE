@@ -1,0 +1,31 @@
+A. following the example of OLS B hat is unbiased, we used matrix notation, where
+E(Bhat|X) = B:
+E(Bhat|X) = E((X'X)^-1 X'y|X) by def.
+=(X'X)^-1 X'E(y|X), by cond. thm. 
+= (X'X)^-1 X'XB+(X'X)^-1 X'E(u|X) BY LINEARUTY
+= B by matrix prop and mean zero assumption
+
+Now redo the proof, but assume E(u|X) = 0.65
+What bias do you get?
+Proof you answer by showing it in the proof. Due to the non-zero conditional mean, setting zero for a term containing an error term (X^T u) is invalid. 
+This term introduces bias into the OLS estimate.
+
+B: Write down all 4 sources of endogeneity
+ 1) Omitted Variable Bias; 2) Measurement errors in regressors; 3) simultaneous equations; 4) program or treatment evaluation with selection into treatment
+
+C.) Below is a Haiku that describes a situation where endogeneity biased the estimation result. Which source of endogeneity does it refer to?
+Haiku: Bias
+Regressed hospital visits on mortality.
+Found that hospitals kill people.
+But Healthy don’t go to hospital.
+Answer: Omitted Variable bias, because it's likely that people are already sick and in critical condition, and they go to hospital. 
+
+D.) Try to think of 2 (or up to 4 if you want to do one for each source) examples/regressions where an important source of endogeneity is likely to bias an OLS-estimation.
+Answer: 
+1. Omitted Variable Bias. Regressed size of the house on house price. Found that # of bedrooms raises the house's price, but they don't count area of the house. 
+2. Measurement error in regressors,  BMI as obesity measurement; however it is a self-reported measurement and might mistakes occur. 
+3. Simultaneous equations: have certain amount of row material, but need produce 2 products from it. 
+4. Program or treatment evaluation with selection into treatment: work benefits, for example free gym membership to keep employees to stay within company, but this for every employer and not based on their perfomance.
+
+Didn't do the coding part, since I have a problem with a laptop. 
+
