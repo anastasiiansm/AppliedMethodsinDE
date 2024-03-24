@@ -27,5 +27,66 @@ Answer:
 3. Simultaneous equations: have certain amount of row material, but need produce 2 products from it. 
 4. Program or treatment evaluation with selection into treatment: work benefits, for example free gym membership to keep employees to stay within company, but this for every employer and not based on their perfomance.
 
-Didn't do the coding part, since I have a problem with a laptop. 
+Code Part: 
+> #Second part of the assingment Part B
+> set.seed(420711)
+> library(MASS)
+> means <- rep(0, 5)
+> data <- mvrnorm(n = 5347, mu = rep(0, 5), Sigma = matrix(c(1.0, 0.2, 0.1, 0.35, 0.0,
++                                                            0.2, 1.0, 0.0, 0.4, 0.0,
++                                                            0.1, 0.0, 1.0, 0.0, 0.4,
++                                                            0.35, 0.4, 0.0, 1.0, 0.6,
++                                                            0.0, 0.0, 0.4, 0.6, 1.0), ncol = 5))
+> Y <- data[, 1]
+> X1 <- data[, 2]
+> X2 <- data[, 3]
+> Z1 <- data[, 4]
+> Z2 <- data[, 5]
+> covariance_matrix <- cov(data)
+> print(covariance_matrix)
+          [,1]         [,2]         [,3]        [,4]       [,5]
+[1,] 1.0262374  0.201511766  0.101217587 0.370459236 0.01407090
+[2,] 0.2015118  1.025140489 -0.001739371 0.420329826 0.02953478
+[3,] 0.1012176 -0.001739371  0.980082601 0.007939834 0.38758415
+[4,] 0.3704592  0.420329826  0.007939834 1.033824878 0.62986734
+[5,] 0.0140709  0.029534779  0.387584152 0.629867337 1.00654547
+> Xbar <- colMeans(data)
+> print(Xbar)
+[1]  0.021446576 -0.008078846 -0.018176797  0.013542419 -0.003154171
+> Ybar <- mean(Y)
+> print(Ybar)
+[1] 0.02144658
+> #find Beta 1
+> beta1 <- (sum((X1 - mean(X1)) * (Y - mean(Y)))) / sum((X1 - mean(X1))^2)
+> print(beta1)
+[1] 0.1965699
+> #regression
+> lm_model <- lm(Y ~ X1)
+> beta_lm <- coef(lm_model)[2]
+> print(beta_lm)
+       X1 
+0.1965699 
+> # Matrix X
+> X <- cbind(rep(1, nrow(data)), X1, rep(1, nrow(data)), X2, Z1, Z2)
+> # X'X
+> XTX <- t(X) %*% X
+> print(XTX)
+                       X1                     X2         Z1         Z2
+   5347.00000  -43.197590 5347.00000  -97.191333   72.41132  -16.86535
+X1  -43.19759 5480.750039  -43.19759   -8.513482 2246.49825  158.02918
+   5347.00000  -43.197590 5347.00000  -97.191333   72.41132  -16.86535
+X2  -97.19133   -8.513482  -97.19133 5241.288215   41.13015 2072.33144
+Z1   72.41132 2246.498251   72.41132   41.130149 5527.80842 3367.04239
+Z2  -16.86535  158.029179  -16.86535 2072.331435 3367.04239 5381.04529
+> # Inverse of X'X
+> inv_XTX <- solve(XTX)
+Error in solve.default(XTX) : 
+  Lapack routine dgesv: system is exactly singular: U[6,6] = 0
+> print(inv_XTX)
+Error in print(inv_XTX) : object 'inv_XTX' not found
+> # Testing X'X 
+> test <- XTX %*% inv_XTX
+Error: object 'inv_XTX' not found
+> print(test)
+Error in print(test) : object 'test' not found
 
